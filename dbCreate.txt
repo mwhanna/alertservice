@@ -1,0 +1,22 @@
+CREATE TABLE `User` (
+   `id` int(11) NOT NULL AUTO_INCREMENT,
+     `name` varchar(255) NOT NULL,
+       `password` varchar(255) NOT NULL,
+         `email` varchar(255) NOT NULL,
+	   `accessToken` varchar(255) NOT NULL,
+	     	`portfolio` varchar(255) DEFAULT NULL,
+						     PRIMARY KEY (`id`),
+						       UNIQUE KEY `email` (`email`),
+						         UNIQUE KEY `accessToken` (`accessToken`)
+)
+
+CREATE TABLE `Stock` (
+    `symbol` varchar(5) NOT NULL,
+      `name` varchar(40) NOT NULL,
+      `price` int,
+      `change` int,
+      `lastFiveMins` varchar(10),
+      `lastTenMins` varchar(20),
+      `fiveMinAvg` int,
+        PRIMARY KEY (`symbol`)
+)
